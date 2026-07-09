@@ -598,4 +598,34 @@ body {
   pointer-events: none;
 }
 
+/* ==========================================
+   CARTEL INICIAL (Aviso para encender la vela)
+   ========================================== */
+.cartel-inicio {
+  position: fixed;
+  top: 75%; /* Lo sitúa abajo en la pantalla para no estorbar la vista de la vela */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10005; /* Un paso por encima del overlay (9999) y la llama (10000) */
+  color: #ffffff;
+  font-family: 'Pacifico', cursive; /* Usa tu misma tipografía fluida */
+  font-size: 26px;
+  text-align: center;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.7), 0 0 15px #ff4d6d;
+  animation: parpadeoSuave 2.5s ease-in-out infinite;
+  pointer-events: none; /* Asegura que no bloquee los clics en la pantalla */
+  user-select: none;
+}
+
+/* Animación de pulsación para captar la atención de Karla sin molestar */
+@keyframes parpadeoSuave {
+  0%, 100% { 
+    opacity: 0.3; 
+    transform: translate(-50%, -50%) scale(0.98);
+  }
+  50% { 
+    opacity: 1; 
+    transform: translate(-50%, -50%) scale(1.02);
+  }
+}
 
